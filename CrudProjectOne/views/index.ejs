@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MY APP</title>
+        <base href="/" target="_blank">
+        <link rel="stylesheet" href="public/style.css">
+    </head>
+    <BODY>
+        The CoV-ID Rescource
+        <form action="/informationOnBusinesses" method="POST">
+            <input type="text" name="name" placeholder="Resource Name">
+            <input type="text" name="city" placeholder="Resource City">
+            <input type="text" name="linkToWebsite"  placeholder="linkToMoreInformation">
+            <button type="submit">Submit</button>
+        </form>
+        <div>
+            <h5> Update the Info
+            </h5>
+            <button id="update">Update This Resource</button>
+        </div>
+        <div>
+            <h5> Delete Some Info
+            </h5>
+            <button id="delete">Delete This Resource</button>
+        </div>
+
+        <ul class="informationOnBusinesses">
+            <% for(var i=0; i<informationOnBusinesses.length; i++) {%>
+              <li class="info">
+                <span><%= informationOnBusinesses[i].name %></span>
+                <span><%= informationOnBusinesses[i].city %></span>
+                <span><%= informationOnBusinesses[i].linkToWebsite %></span>
+              </li>
+            <% } %>
+          </ul>
+          <script src="main.js"></script>
+    </BODY>
+</html>
